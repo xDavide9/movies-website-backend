@@ -13,7 +13,9 @@ router.get("/posters", (req, res) => {
     .then((response) => {
       for (let i = 0; i < response.data.results.length; i++) {
         if (
-          response.data.results[i].popularity >= req.query.minimumPopularity
+          response.data.results[i].popularity >= req.query.minimumPopularity &&
+          response.data.results[i].release_date !== "" &&
+          response.data.results[i].poster_path !== null
         ) {
           results.push(response.data.results[i]);
         }
