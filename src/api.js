@@ -2,12 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const serverless = require("serverless-http");
-const bodyParser = require("body-parser");
 
 const app = express();
-const discoverRouter = require("./routes/discover");
+const searchRouter = require("./routes/search");
 
 app.use(cors());
-app.use("/.netlify/functions/api/discover", discoverRouter);
+app.use("/.netlify/functions/api/search", searchRouter);
 
 module.exports.handler = serverless(app);
