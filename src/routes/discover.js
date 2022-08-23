@@ -16,7 +16,7 @@ router.get("/popular", (req, res) => {
     });
 });
 
-router.get("/popular/range", (req, res) => {
+router.get("/range", (req, res) => {
   // get the most popular films from a specific interval of time
   // yyyy-mm-dd
   axios
