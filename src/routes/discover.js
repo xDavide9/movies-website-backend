@@ -6,7 +6,7 @@ router.get("/popular", (req, res) => {
   // get the most popular films of all times
   axios
     .get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&sort_by=popularity.desc`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&sort_by=popularity.desc&page=${req.query.page}`
     )
     .then((response) => {
       res.json(response.data);
