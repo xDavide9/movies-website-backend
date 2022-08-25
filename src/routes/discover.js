@@ -6,7 +6,7 @@ router.get("/popular", (req, res) => {
   // get the most popular films of all time
   axios
     .get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&sort_by=popularity.desc&page=${req.query.page}`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&sort_by=popularity.desc&page=${req.query.page}&language=${req.query.language}`
     )
     .then((response) => {
       res.json(response.data);
@@ -21,7 +21,7 @@ router.get("/year", (req, res) => {
   // yyyy-mm-dd
   axios
     .get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&primary_release_year=${req.query.year}&sort_by=popularity.desc`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&primary_release_year=${req.query.year}&sort_by=popularity.desc&language=${req.query.language}`
     )
     .then((response) => {
       res.json(response.data);
@@ -55,7 +55,7 @@ router.get("/genre", (req, res) => {
 
   axios
     .get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=${req.query.genre}&sort_by=popularity.desc`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=${req.query.genre}&sort_by=popularity.desc&language=${req.query.language}`
     )
     .then((response) => {
       res.json(response.data);
