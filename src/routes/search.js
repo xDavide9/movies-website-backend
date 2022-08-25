@@ -8,12 +8,11 @@ router.get("/posters", (req, res) => {
 
   axios
     .get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${req.query.query}&language=${req.query.language}&page=${req.query.page}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${req.query.query}&language=${req.query.language}`
     )
     .then((response) => {
       for (let i = 0; i < response.data.results.length; i++) {
         if (
-          response.data.results[i].popularity >= req.query.minimumPopularity &&
           response.data.results[i].release_date !== "" &&
           response.data.results[i].poster_path !== null
         ) {
