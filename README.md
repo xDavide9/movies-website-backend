@@ -13,3 +13,11 @@ backend for https://www.quentertain.com
 - Made with [Express](https://expressjs.com/) and the [TMDb API](https://www.themoviedb.org/)
 - Deployed on [Netlify](https://www.netlify.com/)
 - Frontend at [quentertain.com](https://www.quentertain.com)
+
+### Contribution
+If you wish to Contribute to the Project you will need:
+
+-  `.env` File with the `API_KEY` Env Variable set to the value of an Api Key to get from [themoviedb.org](https://www.themoviedb.org/)
+
+### Credits
+<img src="imgs/tmdblogo.svg" width="500" height="260" alt="TMDb">
